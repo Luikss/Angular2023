@@ -1,4 +1,20 @@
 <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control (intervalEmitter)="onIntervalEmit($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let number of oddNumbers" [oddNumber]="number"></app-odd>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-even *ngFor="let number of evenNumbers" [evenNumber]="number"></app-even>
+    </div>
+  </div>
+  <hr>
   <app-cockpit
     (serverCreated)="onServerAdded($event)"
     (bpCreated)="onBlueprintAdded($event)">
