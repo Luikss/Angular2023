@@ -17,4 +17,5 @@ export class ShoppingEditComponent {
     const ingredient = new Ingredient(ingredientName, ingredientAmount);
     this.ingredientAdded.emit(ingredient)
   }
+
 }
