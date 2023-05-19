@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ActiveUsersComponent } from './active-users/active-users.component';
+import { CounterService } from "./counter.service";
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 
 @NgModule({
@@ -17,7 +18,7 @@ import { InactiveUsersComponent } from './inactive-users/inactive-users.componen
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
