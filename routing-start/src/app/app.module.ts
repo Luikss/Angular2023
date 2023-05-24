@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes, RouterLinkActive } from "@angular/router";
+import {RouterModule, Routes, RouterLinkActive, RouterLink} from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,8 +14,13 @@ import { ServersService } from './servers/servers.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'servers', component: ServersComponent },
+  { path: 'users', component: UsersComponent, children: [
+      { path: ':id/:name', component: UserComponent }
+    ] },
+  { path: 'servers', component: ServersComponent, children: [
+      { path: ':id', component: ServerComponent },
+      { path: ':id/edit', component: EditServerComponent }
+    ] }
 ]
 
 @NgModule({
@@ -32,7 +37,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    RouterLinkActive
+    RouterLinkActive,
+    RouterLink,
+    RouterLink
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
