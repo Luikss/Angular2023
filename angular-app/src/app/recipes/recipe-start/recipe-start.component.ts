@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-start',
-  templateUrl: './recipe-start.component.html',
-  styleUrls: ['./recipe-start.component.css']
+  templateUrl: './recipe-start.component.html'
 })
-export class RecipeStartComponent {
-
-}
+export class RecipeStartComponent {}
