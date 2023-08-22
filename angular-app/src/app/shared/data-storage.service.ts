@@ -5,9 +5,7 @@ import { AuthService } from "../auth/auth.service";
 import { Recipe } from "../recipes/recipe.model";
 import { RecipeService } from "../recipes/recipe.service";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class DataStorageService {
   url = 'https://ng-course-recipe-book-d1287-default-rtdb.europe-west1.firebasedatabase.app/recipes.json';
 
